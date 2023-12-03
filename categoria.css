@@ -1,0 +1,247 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background-color:  #080808;
+    color: #fff;
+    padding: 10px 0;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Añadimos flex-wrap para que los elementos se ajusten en pantallas pequeñas */
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño del header */
+    display: flex; /* Añadimos display: flex para utilizar flexbox */
+    align-items: center; /* Centramos verticalmente los elementos */
+}
+
+.menu_desplegable {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 5px 0;
+    margin-left: 2%;
+}
+.menu_desplegable span a {
+    display: flex; /* Alinea la imagen verticalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.menu_desplegable span img.menu {
+    max-height: 50px; /* Ajusta la altura máxima de la imagen */
+    margin: 0; /* Elimina cualquier margen que pueda tener la imagen */
+}
+.menu_desplegable .desplegable {
+    display: none;
+    position: absolute;
+    background-color: #090909;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu_desplegable:hover .desplegable {
+    display: block;
+}
+
+.menu_desplegable .desplegable a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.menu_desplegable .desplegable a:hover {
+    background-color: #ddd;
+    color: red;
+}
+
+
+.logo {
+    text-align: center;
+
+}
+
+.logo img {
+    max-width: 180px;
+    max-height: 60px;
+}
+
+.texto {
+    color: #e01010;
+}
+
+    .centro {
+        flex: 1; /* Haz que .centro ocupe todo el espacio restante */
+        display: flex;
+        justify-content: center; /* Centra el contenido horizontalmente */
+        align-items: center; /* Centra el contenido verticalmente */
+    }
+
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.buscar {
+    margin-left: auto; /* Empuja el buscador hacia la derecha */
+    display: flex; /* Alineamos el input y el botón en la misma fila */
+}
+
+.buscar input {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño del input */
+}
+
+.buscar input:focus + button {
+    pointer-events: none;
+}
+
+.buscar button {
+    padding: 10px 20px;
+    background-color: #0c0c0c;
+    color: white;
+    border: none;
+    margin-left: 5px; /* Añadimos un pequeño espacio entre el input y el botón */
+}
+
+.carrito img {
+    width: 30px;
+    height: 30px;
+}
+
+.carrito {
+    margin-right: 2%; /* Empuja el carrito hacia la derecha para que esté en el extremo derecho */
+}
+
+/* Sección general */
+.productos-destacados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1300px;
+    margin: 10% ;
+}
+
+.categoria {
+   text-align: center;
+    width: 25%;
+    margin-bottom: 20px;
+    color: #cb0a0a;
+    background-color: #f4f4f4;
+   
+}
+
+.categoria h1 {
+    font-size: 40px;
+    width: 100%;
+
+}
+
+/* Fotos de productos */
+.fotos_pc {
+    flex: 0 0 calc(25% - 20px); 
+    margin: 10px;
+    border: 2px solid rgb(8, 7, 7);
+    overflow: hidden; 
+    height: 280px; 
+}
+
+/* Imagen de producto */
+.pc-imagen {
+    width: 100%;
+    height: 200px;
+}
+
+/* Información del producto */
+.informacion {
+    text-align: center;
+    border: 2px solid #090909;
+    background-color: #cb0a0a;
+    padding: 2px;
+}
+
+/* Enlaces en la información */
+.informacion a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Añadido para mantener el espacio entre las fotos en filas y columnas de 4 */
+@media (max-width: 768px) {
+    .fotos_pc {
+        width: calc(25% - 20px);
+        margin-bottom: 200px;
+    }
+}
+
+
+
+/* Pie de Página */
+.pie_pagina {
+    background-color: #090909;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2%; /* Añade espacios a los lados del footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+.pie_pagina .pie_enlaces a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+.fotos_pie {
+    max-width: 30px;
+}
+@media screen and (max-width: 768px) {
+    /* Aquí los estilos específicos para tamaños de pantalla más pequeños */
+    .centro {
+        flex-direction: column; /* Cambiar la dirección del contenido central a columna */
+        text-align: center; /* Centrar el texto en dispositivos móviles */
+    }
+
+    
+}
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px; /* Ajusta el padding del encabezado en pantallas pequeñas */
+    }
+    
+    .productos-destacados {
+        margin: 5%; /* Ajusta el margen de los productos destacados en pantallas pequeñas */
+    }
+
+    .categoria {
+        width: 100%; /* Hace que las categorías ocupen todo el ancho en pantallas pequeñas */
+    }
+
+    .fotos_pc {
+        flex: 0 0 calc(50% - 20px); /* Ajusta el tamaño de las fotos en pantallas pequeñas */
+        margin-bottom: 10px; /* Ajusta el margen inferior de las fotos en pantallas pequeñas */
+    }
+
+    .centro {
+        text-align: center; /* Centra el texto en dispositivos móviles */
+    }
+}
+

@@ -1,0 +1,355 @@
+
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background-color:  #080808;
+    color: #fff;
+    padding: 10px 0;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Añadimos flex-wrap para que los elementos se ajusten en pantallas pequeñas */
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño del header */
+    display: flex; /* Añadimos display: flex para utilizar flexbox */
+    align-items: center; /* Centramos verticalmente los elementos */
+}
+
+.menu_desplegable {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 5px 0;
+    margin-left: 2%;
+}
+.menu_desplegable span a {
+    display: flex; /* Alinea la imagen verticalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.menu_desplegable span img.menu {
+    max-height: 50px; /* Ajusta la altura máxima de la imagen */
+    margin: 0; /* Elimina cualquier margen que pueda tener la imagen */
+}
+.menu_desplegable .desplegable {
+    display: none;
+    position: absolute;
+    background-color: #090909;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu_desplegable:hover .desplegable {
+    display: block;
+}
+
+.menu_desplegable .desplegable a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.menu_desplegable .desplegable a:hover {
+    background-color: #ddd;
+    color: red;
+}
+
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    max-width: 150px;
+    max-height: 50px;
+}
+
+.texto {
+    color: #e01010;
+}
+
+    .centro {
+        flex: 1; /* Haz que .centro ocupe todo el espacio restante */
+        display: flex;
+        justify-content: center; /* Centra el contenido horizontalmente */
+        align-items: center; /* Centra el contenido verticalmente */
+    }
+
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.buscar {
+    margin-left: auto; /* Empuja el buscador hacia la derecha */
+    display: flex; /* Alineamos el input y el botón en la misma fila */
+}
+
+.buscar input {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño del input */
+}
+
+.buscar input:focus + button {
+    pointer-events: none;
+}
+
+.buscar button {
+    padding: 10px 20px;
+    background-color: #0c0c0c;
+    color: white;
+    border: none;
+    margin-left: 5px; /* Añadimos un pequeño espacio entre el input y el botón */
+}
+
+.carrito img {
+    width: 30px;
+    height: 30px;
+}
+
+.carrito {
+    margin-right: 2%; /* Empuja el carrito hacia la derecha para que esté en el extremo derecho */
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    margin-top: 7%;
+   
+}
+
+.banner-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: changeImage 10s infinite;
+    
+}
+
+@keyframes changeImage {
+    0%, 20% { opacity: 1; }
+    21%, 100% { opacity: 1; }
+}
+
+.banner-imagen:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.banner-imagen:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.banner-imagen:nth-child(3) {
+    animation-delay: 10s;
+}
+
+/* Productos */
+.productos {
+    background-color: #ed2828;
+    width: 100vw; /* El 100% del ancho de la ventana */
+    text-align: center; 
+    overflow: hidden; 
+    margin-top: 1%;
+    margin-bottom: 1%;
+  
+}
+
+.productos h1 {
+    color:#0c0c0c;
+    display: inline-block;
+    white-space: nowrap;
+    animation: moverTexto 20s linear infinite; 
+}
+
+@keyframes moverTexto {
+    0% {
+        transform: translateX(100%); 
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+
+h3{
+    text-align: left; 
+    margin-left: 2%;
+}
+
+.pc-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.fotos_principal {
+    width: 70%; /* La foto principal ocupa el 80% del ancho */
+    margin-bottom: 20px; /* Ajusta el margen inferior según tus preferencias */
+    max-height: 350px; /* Establece la altura máxima de la foto principal */
+    flex: 0 0 60%; /* Hace que la foto principal ocupe toda la anchura en la columna */
+    border-radius: 10px;
+}
+
+.fotos_secundarias {
+    
+    display: flex;
+    flex-wrap: wrap; /* Permite que las fotos secundarias se envuelvan en filas */
+    justify-content: space-around; /* Centra las filas horizontalmente y agrega espacio entre ellas */
+    
+}
+
+.fotos_pc {
+    flex: 0 0 calc(30% - 20px); /* Esto hace que cada elemento ocupe el 30% del contenedor y resta 20px para el margen */
+    margin: 10px; /* Ajusta el margen según tus preferencias */
+    border: 2px solid black; /* Agrega un borde negro de 2px */
+    background-color: #ec2222;
+    border-radius: 10px;
+}
+
+.pc-imagen {
+    
+   
+    width: 100%; /* Para asegurarse de que la imagen ocupe todo el espacio del contenedor */
+    height: 80%; 
+    max-height: 300px; /* Establece la altura máxima de las imágenes secundarias */
+    border-radius: 10px;
+}
+
+h4{
+    text-align: center;
+    color:whitesmoke;
+    size: 40PX;
+    text-transform: uppercase;
+}
+
+/* Añade reglas de medios para hacer ajustes específicos en diferentes tamaños de pantalla */
+@media screen and (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas (ejemplo: tablets y dispositivos móviles) */
+    .pc-imagen {
+        width: 100%; /* Asegura que las imágenes se ajusten al ancho del contenedor */
+        max-width: 100%; /* Limita el ancho máximo de las imágenes */
+        height:70%; /* Permite que la altura se ajuste automáticamente */
+    }
+
+    h4 {
+        font-size: 2vw; /* Ajusta el tamaño del texto para tamaños de pantalla más pequeños */
+    }
+
+   
+}
+
+
+
+.subscribirte{
+    text-align: center;
+    background-color: #e01010;
+    border: 1px solid rgb(10, 10, 10);
+    margin-bottom: 1%; 
+    margin-top: 5%;
+    
+}
+.columna {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#correoUsuario {
+    width: 20%;
+    padding: 10px; /* Aumenta el espacio dentro del input */
+    font-size: 1em; /* Ajusta el tamaño de la fuente */
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #0c0c0c;
+    color: white;
+    border: none;
+    font-size: 1em; /* Ajusta el tamaño de la fuente del botón */
+    margin-left: 5px;
+}
+
+.contact{
+    text-align: center;
+    margin-bottom: 2%;
+}
+/* Pie de Página */
+.pie_pagina {
+    background-color: #090909;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2%; /* Añade espacios a los lados del footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+.pie_pagina .pie_enlaces a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+.fotos_pie {
+    max-width: 30px;
+}
+@media screen and (max-width: 768px) {
+    /* Aquí los estilos específicos para tamaños de pantalla más pequeños */
+    .centro {
+        flex-direction: column; /* Cambiar la dirección del contenido central a columna */
+        text-align: center; /* Centrar el texto en dispositivos móviles */
+    }
+
+    
+}
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px; /* Ajusta el padding del encabezado en pantallas pequeñas */
+    }
+    
+    .productos-destacados {
+        margin: 5%; /* Ajusta el margen de los productos destacados en pantallas pequeñas */
+    }
+
+    .categoria {
+        width: 100%; /* Hace que las categorías ocupen todo el ancho en pantallas pequeñas */
+    }
+
+    .fotos_pc {
+        flex: 0 0 calc(50% - 20px); /* Ajusta el tamaño de las fotos en pantallas pequeñas */
+        margin-bottom: 10px; /* Ajusta el margen inferior de las fotos en pantallas pequeñas */
+    }
+
+    .centro {
+        text-align: center; /* Centra el texto en dispositivos móviles */
+    }
+}
+

@@ -1,0 +1,295 @@
+
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+/* Encabezado */
+header {
+    background-color:  #080808;
+    color: #fff;
+    padding: 10px 0;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Añadimos flex-wrap para que los elementos se ajusten en pantallas pequeñas */
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño del header */
+    display: flex; /* Añadimos display: flex para utilizar flexbox */
+    align-items: center; /* Centramos verticalmente los elementos */
+    margin-bottom: 5%;
+}
+
+.menu_desplegable {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 5px 0;
+    margin-left: 2%;
+}
+.menu_desplegable span a {
+    display: flex; /* Alinea la imagen verticalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.menu_desplegable span img.menu {
+    max-height: 50px; /* Ajusta la altura máxima de la imagen */
+    margin: 0; /* Elimina cualquier margen que pueda tener la imagen */
+}
+.menu_desplegable .desplegable {
+    display: none;
+    position: absolute;
+    background-color: #090909;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu_desplegable:hover .desplegable {
+    display: block;
+}
+
+.menu_desplegable .desplegable a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.menu_desplegable .desplegable a:hover {
+    background-color: #ddd;
+    color: red;
+}
+
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    max-width: 150px;
+    max-height: 50px;
+}
+
+.texto {
+    color: #e01010;
+}
+
+    .centro {
+        flex: 1; /* Haz que .centro ocupe todo el espacio restante */
+        display: flex;
+        justify-content: center; /* Centra el contenido horizontalmente */
+        align-items: center; /* Centra el contenido verticalmente */
+    }
+
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.buscar {
+    margin-left: auto; /* Empuja el buscador hacia la derecha */
+    display: flex; /* Alineamos el input y el botón en la misma fila */
+}
+
+.buscar input {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño del input */
+}
+
+.buscar input:focus + button {
+    pointer-events: none;
+}
+
+.buscar button {
+    padding: 10px 20px;
+    background-color: #0c0c0c;
+    color: white;
+    border: none;
+    margin-left: 5px; /* Añadimos un pequeño espacio entre el input y el botón */
+}
+
+.carrito img {
+    width: 30px;
+    height: 30px;
+}
+
+.carrito {
+    margin-right: 2%; /* Empuja el carrito hacia la derecha para que esté en el extremo derecho */
+}
+
+/* Estilos para la sección de Contenido */
+.contenido {
+    text-align: left; /* Centra el contenido */
+    margin-top: 5%;
+
+}
+
+.unete {
+    background-color: #ed2828;
+    width: 100vw; /* El 100% del ancho de la ventana */
+    height: 5vw;
+    text-align: center; 
+    overflow: hidden; 
+    margin-top: 2%;
+    margin-bottom: 1%;
+  
+}
+
+.unete h1 {
+    color:#0c0c0c;
+    display: inline-block;
+    white-space: nowrap;
+    animation: moverTexto 20s linear infinite; 
+}
+
+@keyframes moverTexto {
+    0% {
+        transform: translateX(100%); 
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+
+
+.contenido h2 {
+    font-size: 1.8em; /* Modifica el tamaño de los subtítulos */
+}
+
+.contenido h3 {
+    font-size: 1.5em; /* Modifica el tamaño de los títulos de sección */
+    color:#e01010;
+}
+
+/* Justificar el texto */
+.contenido p {
+    text-align: justify; /* Justifica el texto */
+}
+/* Añadir padding alrededor del texto */
+.contenido h1,
+.contenido h2,
+.contenido h3,
+.contenido p {
+    padding: 20px; /* Ajusta el padding según sea necesario */
+}
+/* Estilos para la sección de Posiciones Disponibles */
+.oportunidades {
+    margin-top: 50px;
+  
+}
+
+.posiciones-disponibles {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 30px;
+}
+
+.posicion {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(70% - 20px); /* Dos columnas, con margen entre ellas */
+    margin-bottom: 40px;
+}
+
+.posicion h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.posicion p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.posicion ul {
+    margin-bottom: 15px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.btn-aplicar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e01010;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-aplicar:hover {
+    background-color: #c00909;
+}
+
+
+.formulario{
+    padding: 20px;
+}
+/* Pie de Página */
+.pie_pagina {
+    background-color: #090909;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2%; /* Añade espacios a los lados del footer */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+.pie_pagina .pie_enlaces a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+.fotos_pie {
+    max-width: 30px;
+}
+@media screen and (max-width: 768px) {
+    /* Aquí los estilos específicos para tamaños de pantalla más pequeños */
+    .centro {
+        flex-direction: column; /* Cambiar la dirección del contenido central a columna */
+        text-align: center; /* Centrar el texto en dispositivos móviles */
+    }
+
+    
+}
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px; /* Ajusta el padding del encabezado en pantallas pequeñas */
+    }
+    
+    .productos-destacados {
+        margin: 5%; /* Ajusta el margen de los productos destacados en pantallas pequeñas */
+    }
+
+    .categoria {
+        width: 100%; /* Hace que las categorías ocupen todo el ancho en pantallas pequeñas */
+    }
+
+    .fotos_pc {
+        flex: 0 0 calc(50% - 20px); /* Ajusta el tamaño de las fotos en pantallas pequeñas */
+        margin-bottom: 10px; /* Ajusta el margen inferior de las fotos en pantallas pequeñas */
+    }
+
+    .centro {
+        text-align: center; /* Centra el texto en dispositivos móviles */
+    }
+}
